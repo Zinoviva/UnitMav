@@ -33,4 +33,5 @@ public class Person implements Comparable<Person> {
             return Integer.compare(age, o.age);  //если значения одинаковые, то знатен тот кто старше
         }
     }
+
 }
