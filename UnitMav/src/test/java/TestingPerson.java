@@ -1,21 +1,13 @@
-package Testing;
-
 import org.junit.jupiter.api.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonTest {
-        private PersonTest personTest;
 
-    private PersonTest(String name, String surname, int age) {
-    }
-    private List<PersonTest> people = new ArrayList<>();
+public class TestingPerson {
+    private Person person;
 
     @BeforeEach
     void setUp() {
-        people.add(new PersonTest("Mariam", "Gorlovanova", 18));
-        people.add(new PersonTest("Oleg", "Zvonkovenko", 32));
         System.out.println("Вызываюсь до выполнения теста");
     }
     @AfterEach
@@ -36,14 +28,15 @@ public class PersonTest {
 
     @Test
     @DisplayName("Тестирование передачи параметр в другой объект")
-    short compareTo (){
-            Assertions.assertEquals(-1,personTest.compareTo());
-        return -1;
+    void compareTo (){
+        person = new Person("Oleg", "Zvonkovenko", 32);
+            Assertions.assertEquals(0,person.compareTo(person));
     }
     @Test
     @DisplayName("Тестирование передачи параметр в другой объект")
-    short compareToTwo (){
-        Assertions.assertEquals(1, personTest.compareTo() );
-        return 1;
+    void compareToTwo (){
+        person = new Person("Masha", "Zvonkova", 42);
+        Assertions.assertEquals(0, person.compareTo(person));
     }
+
 }

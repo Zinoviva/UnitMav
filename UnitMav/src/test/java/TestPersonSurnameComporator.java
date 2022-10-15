@@ -1,14 +1,12 @@
-package Testing;
-
 import org.junit.jupiter.api.*;
 
-@DisplayName("Тестирование: PersonSurnameComporatorTest")
-public class PersonSurnameComporatorTest {
-    private PersonSurnameComporatorTest personSurnameComporatorTest;
+public class TestPersonSurnameComporator {
+    private PersonSurnameComporator personSurnameComporator;
+    private Person person;
 
     @BeforeEach
     void setUp() {
-        personSurnameComporatorTest = new PersonSurnameComporatorTest();
+        personSurnameComporator = new PersonSurnameComporator();
         System.out.println("Вызываюсь до выполнения теста");
     }
 
@@ -29,9 +27,9 @@ public class PersonSurnameComporatorTest {
 
     @Test
     @DisplayName("Тестирование компоратора")
-    int compare() {
-        Assertions.assertEquals(1,personSurnameComporatorTest.compare());
-        return 1;
+    void compare() {
+        Person person1 = new Person("Mariam", "Gorlovanova", 18);
+        Person person2 = new Person("Vova", "Novikov", 24);
+        Assertions.assertEquals(0,personSurnameComporator.compare(person1, person2));
     }
-
 }
