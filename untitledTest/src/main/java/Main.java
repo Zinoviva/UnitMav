@@ -11,5 +11,6 @@ public class Main {
         Collections.sort(people, new PersonSurnameComporator());  //учим джаву сравнивать объекты в классе персон
         //метод сорт вторым параметром берет принцип сортировки
         System.out.println(people);//после сортировки покажет нам список в нужном порядке
+        //тест
     }
 }
